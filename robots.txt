@@ -8,6 +8,7 @@
 ##### ALLOW — Search + AI + Social Preview
 User-agent: Googlebot
 Allow: /
+Allow: /blog/
 Disallow: /admin/
 Disallow: /api/private/
 Disallow: /__internal/
