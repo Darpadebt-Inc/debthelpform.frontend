@@ -3,16 +3,16 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>DHF — 60‑Second Consolidation Loan Eligibility Check</title>
-  <meta name="description" content="Answer a few quick questions to see if you may qualify for a debt consolidation loan. Secure & confidential. No obligation." />
+  <title>Debt Help Form — 60-Second Debt Options Check</title>
+  <meta name="description" content="Answer a short set of questions to help review consolidation, settlement, hardship, and other unsecured-debt options. No obligation." />
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://debthelpform.com/" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://debthelpform.com/" />
-  <meta property="og:title" content="DHF — 60‑Second Consolidation Loan Eligibility Check" />
-  <meta property="og:description" content="Answer a few quick questions to see if you may qualify for a debt consolidation loan. Secure & confidential. No obligation." />
+  <meta property="og:title" content="Debt Help Form — 60-Second Debt Options Check" />
+  <meta property="og:description" content="Answer a short set of questions to help review consolidation, settlement, hardship, and other unsecured-debt options. No obligation." />
   <meta property="og:image" content="https://debthelpform.com/debt-relief-couple.png" />
-  <link rel="icon" href="/debt-relief-couple.png" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230ea5e9'/%3E%3Cpath d='M18 33l9 9 20-22' fill='none' stroke='white' stroke-width='7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
   <link rel="apple-touch-icon" href="/debt-relief-couple.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -279,37 +279,28 @@
       </a>
       <button class="menu-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks">Menu</button>
       <div class="links" id="navLinks">
-        <a href="/">Home</a>
-        <a href="/relief.html">Relief Options</a>
-        <a href="/debt-settlement.html">Debt Settlement</a>
-        <a href="/debt-consolidation.html">Debt Consolidation</a>
-        <a href="/credit-card-hardship.html">Credit Card Hardship</a>
-        <a href="/debt-validation-basics.html">Debt Validation</a>
-        <a href="/creditors-vs-collectors.html">Creditors vs Collectors</a>
-        <a href="/geo-debt-relief.html">State Rules</a>
-        <a href="/about.html">About</a>
+        <a href="/relief.html">Options</a>
         <a href="/faq.html">FAQ</a>
-        <a href="/blog/">Blog</a>
-        <a href="/calculator.savings.html">Debt Calculator</a>
-        <a href="/contact.html">Contact</a>
+        <a href="/blog/">Learn</a>
         <a href="/privacy.html">Privacy</a>
-        <a href="/terms.html">Terms</a>
-        <a href="/apply.html#get-started">Start Secure Estimate</a>
         <a class="call" href="tel:+18884377141">Call +1 (888) 437‑7141</a>
       </div>
     </nav>
 
     <header class="hero cta-panel" id="entry">
-      <div class="h1 cta-title">Take 60 Seconds - Check Loan Qualification</div>
-      <div class="sub">Answer a few quick questions to preview your options. Secure & confidential. No obligation.</div>
+      <h1 class="h1 cta-title">Find the debt relief path that fits your situation.</h1>
+      <div class="sub">Answer a short set of questions to help review consolidation, settlement, hardship, and other unsecured-debt options. No obligation.</div>
       <div id="get-started">
-        <button class="primary" id="startBtn">Start Now</button>
+        <button class="primary" id="startBtn">Start the 60-second check</button>
+      </div>
+      <div class="center" style="margin-top:10px">
+        <a class="muted" style="color:rgba(255,255,255,.9);text-decoration:underline" href="tel:+18884377141">or talk to a person</a>
       </div>
       <ul class="hero-benefits">
-        <li><span>💵⬇️</span>Payments as low as $250 a month</li>
-        <li><span>🚫🔍</span>No hard credit checks</li>
-        <li><span>📉</span>Debt‑free in 24–48 months</li>
-        <li><span>💳</span>One low monthly payment</li>
+        <li><span>🔒</span>No hard credit check for this intake</li>
+        <li><span>✅</span>No upfront debt-relief fees</li>
+        <li><span>🛡️</span>Privacy-first routing</li>
+        <li><span>⏱️</span>Review options in about 60 seconds</li>
       </ul>
     </header>
 
@@ -330,8 +321,8 @@
     </div>
 
     <div class="card page-card hidden cta-panel" id="leadGate">
-      <div class="prompt">Thanks! Based on your answers, you may qualify for a consolidation loan.</div>
-      <div class="muted">Where should we send your free results?</div>
+      <div class="prompt">Thanks — your answers help route your options summary.</div>
+      <div class="muted">Where should we send your options summary?</div>
       <form id="leadForm" autocomplete="on">
         <input type="text" name="first" placeholder="First name" required autocomplete="given-name" />
         <input type="email" name="email" placeholder="Email" required inputmode="email" autocomplete="email" />
@@ -347,13 +338,14 @@
           <input type="checkbox" name="consent_marketing" value="yes" />
           <span>It’s okay to contact me about debt relief options by phone, email, or text.</span>
         </label>
-        <button class="button primary" type="submit">See my options</button>
+        <p class="legal">Consent is not required to purchase services.</p>
+        <button class="button primary" type="submit">Send my options summary</button>
         <p class="muted hidden" id="leadStatus" role="status" aria-live="polite"></p>
       </form>
     </div>
 
     <div class="card page-card hidden cta-panel" id="results">
-      <div class="prompt">Here’s what people like you often see when consolidating</div>
+      <div class="prompt">Example payment ranges (estimates only)</div>
       <div class="calc">
         <div><span class="pill" id="calcDebt">$—</span> total debt</div>
         <div>Estimated consolidated payment range: <strong id="calcPayment">$— / mo</strong></div>
@@ -374,6 +366,20 @@
   </div>
 
   <footer class="card" style="max-width:1000px;margin:10px auto 140px;padding:14px">
+    <nav aria-label="More pages" class="muted" style="font-size:12px;line-height:1.9;margin-bottom:10px">
+      <a href="/relief.html" class="muted" style="text-decoration:underline">Relief Options</a> ·
+      <a href="/debt-settlement.html" class="muted" style="text-decoration:underline">Debt Settlement</a> ·
+      <a href="/debt-consolidation.html" class="muted" style="text-decoration:underline">Debt Consolidation</a> ·
+      <a href="/credit-card-hardship.html" class="muted" style="text-decoration:underline">Credit Card Hardship</a> ·
+      <a href="/debt-validation-basics.html" class="muted" style="text-decoration:underline">Debt Validation</a> ·
+      <a href="/creditors-vs-collectors.html" class="muted" style="text-decoration:underline">Creditors vs Collectors</a> ·
+      <a href="/geo-debt-relief.html" class="muted" style="text-decoration:underline">State Rules</a> ·
+      <a href="/calculator.savings.html" class="muted" style="text-decoration:underline">Debt Calculator</a> ·
+      <a href="/about.html" class="muted" style="text-decoration:underline">About</a> ·
+      <a href="/faq.html" class="muted" style="text-decoration:underline">FAQ</a> ·
+      <a href="/blog/" class="muted" style="text-decoration:underline">Blog</a> ·
+      <a href="/contact.html" class="muted" style="text-decoration:underline">Contact</a>
+    </nav>
     <div class="muted" style="font-size:12px;line-height:1.5">
       © <span id="y"></span> DebtHelpForm.com — a service of Gateway Financial Settlement Relief, LLC (GFSR). Not affiliated with “Gateway Debt Relief” of Costa Mesa, CA.
       <span style="margin-left:6px">•</span>
@@ -387,7 +393,7 @@
 
   <script>
   const CONFIG = { LEAD_ENDPOINT: "/api/mesh/036-lead-router/ingest", SITE_TAG: "DHF", CALL_NUMBER: "+1 (888) 437-7141" };
-  const state = { step: 0, answers: { debt_amount: null, debt_type: [], payment_status: null, credit_band: null, state: null, income_band: null } };
+  const state = { step: 0, answers: { debt_amount: null, debt_type: [], payment_status: null, credit_band: null, state: null } };
 
   const UTM_PARAMS = (() => {
     const params = new URLSearchParams(window.location.search);
@@ -568,7 +574,8 @@
     const consent = {
       terms: fd.get('consent_terms') === 'on',
       marketing: marketingOptIn,
-      timestamp: new Date().toISOString()
+      timestamp: new Date().toISOString(),
+      disclosure_version: '2026-06-homepage-v1'
     };
     const { state: stateAnswer, debt_amount: debtRange, ...restAnswers } = state.answers;
     const debtAmount = DEBT_RANGE_MAP[debtRange] || null;
