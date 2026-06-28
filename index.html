@@ -22,7 +22,9 @@
     :root{ --bg:#f8fafc; --surface:#eff6ff; --text:#0f172a; --muted:#475569; --navy:#0b2b4a; --brand:#0369a1; --brand-2:#15803d; --cta:#15803d; --cta-700:#166534; --ring: rgba(3,105,161,.30); --radius: 18px; --shadow: 0 10px 30px rgba(2,6,23,.08); --cta-gradient: linear-gradient(135deg,#0b2b4a,#0c5a8f 55%,#0369a1); --cta-button: rgba(15,23,42,.9); --cta-button-shadow: 0 8px 18px rgba(15,23,42,.35); }
     *{box-sizing:border-box}
     html,body{height:100%}
-    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,sans-serif;background:var(--bg);color:var(--text)}
+    html{scroll-padding-top:120px}
+    img,svg,video,canvas{max-width:100%;height:auto}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,sans-serif;background:var(--bg);color:var(--text);overflow-wrap:break-word}
     body.nav-open{overflow:hidden}
     .shell{max-width:1000px;margin:0 auto;padding:10px 16px 120px}
 
@@ -210,7 +212,7 @@
     .range{width:100%}
     .range input[type="range"]{width:100%}
     .range-labels{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-top:6px}
-    .footer-sticky{position:fixed;left:0;right:0;bottom:0;background:rgba(255,255,255,.98);backdrop-filter:saturate(120%) blur(6px);border-top:1px solid #e2e8f0;padding:10px 14px;display:flex;align-items:center;justify-content:space-between;gap:8px;box-shadow:0 -10px 30px rgba(2,6,23,.05)}
+    .footer-sticky{position:fixed;left:0;right:0;bottom:0;background:rgba(255,255,255,.98);backdrop-filter:saturate(120%) blur(6px);border-top:1px solid #e2e8f0;padding:10px 14px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;row-gap:6px;gap:8px;box-shadow:0 -10px 30px rgba(2,6,23,.05)}
     .trust{display:flex;align-items:center;gap:8px;color:#0369a1;font-weight:600;font-size:13px}
     .callnow{font-weight:800;color:#fff;background:var(--brand-2);border:none;border-radius:999px;padding:10px 14px;text-decoration:none}
     form{display:grid;gap:10px}
