@@ -22,7 +22,7 @@
     :root{ --bg:#f8fafc; --surface:#eff6ff; --text:#0f172a; --muted:#475569; --navy:#0b2b4a; --brand:#0369a1; --brand-2:#15803d; --cta:#15803d; --cta-700:#166534; --ring: rgba(3,105,161,.30); --radius: 18px; --shadow: 0 10px 30px rgba(2,6,23,.08); --cta-gradient: linear-gradient(135deg,#0b2b4a,#0c5a8f 55%,#0369a1); --cta-button: rgba(15,23,42,.9); --cta-button-shadow: 0 8px 18px rgba(15,23,42,.35); }
     *{box-sizing:border-box}
     html,body{height:100%}
-    html{scroll-padding-top:120px}
+    html{scroll-padding-top:var(--header-h,170px)}
     img,svg,video,canvas{max-width:100%;height:auto}
     body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,sans-serif;background:var(--bg);color:var(--text);overflow-wrap:break-word}
     body.nav-open{overflow:hidden}
@@ -477,6 +477,22 @@
         setOpen(false);
       }
     });
+
+    // Keep scroll-padding-top matched to the real sticky-nav height so any in-page
+    // anchor jump lands below the nav instead of being clipped behind it.
+    const siteNav = document.querySelector('.site-nav');
+    if(siteNav){
+      let rafId = 0;
+      const syncHeaderOffset = () => {
+        rafId = 0;
+        const h = Math.round(siteNav.getBoundingClientRect().height);
+        if(h > 0) document.documentElement.style.setProperty('--header-h', (h + 12) + 'px');
+      };
+      const scheduleHeaderOffset = () => { if(!rafId) rafId = requestAnimationFrame(syncHeaderOffset); };
+      scheduleHeaderOffset();
+      window.addEventListener('resize', scheduleHeaderOffset);
+      window.addEventListener('load', scheduleHeaderOffset);
+    }
   })();
 
   const steps = [
