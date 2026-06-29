@@ -298,9 +298,6 @@
     .cta-row{display:flex;flex-wrap:wrap;gap:10px}
     .cta-row .button{flex:1 1 180px;justify-content:center}
 
-    #lead-form{padding:22px 24px;background:#f9fafb;border:1px dashed #cbd5e1;border-radius:16px}
-    #lead-form h3{margin:0 0 12px;font-size:20px;color:var(--text)}
-    #ghl-embed{min-height:520px;border-radius:14px;overflow:hidden;background:#fff;display:flex;align-items:center;justify-content:center;color:#64748b;border:1px solid #e2e8f0}
 
     .muted{color:var(--muted);font-size:13px}
 
@@ -485,10 +482,6 @@
             <a class="button primary" data-role="estimate" href="/apply.html#get-started">🔒 Start Secure Estimate</a>
             <a class="button ghost call" data-role="call" href="tel:+18884377141">📞 Talk to a Specialist</a>
           </div>
-          <section id="lead-form">
-            <h3>Ready for a private, no-pressure review?</h3>
-            <div id="ghl-embed">Loading secure form…</div>
-          </section>
         </div>
       </section>
     </main>
@@ -605,21 +598,6 @@
       window.addEventListener('resize', setHeight, {passive:true});
     })();
   </script>
-  <script>
-    (function(){
-      const mount = document.getElementById('ghl-embed');
-      const url = "https://api.leadconnectorhq.com/widget/form/A5c9I3HkyNd1puU4nJWl";
-      if (!mount) return;
-      const helper = document.createElement("script");
-      helper.src = "https://link.msgsndr.com/js/form_embed.js"; helper.defer = true;
-      document.body.appendChild(helper);
-      const s = document.createElement("script");
-      s.src = url; s.async = true;
-      s.onerror = ()=>{ mount.textContent = "Unable to load the secure form. Please try again or call 888-437-7141."; };
-      mount.innerHTML = ""; document.body.appendChild(s);
-    })();
-  </script>
-
   <script>
     function calculateCreditorRepayment(debtAmount, monthlyPayment, interestRate){
       const monthlyRate=(interestRate/100)/12; let balance=debtAmount,totalPaid=0,months=0;
