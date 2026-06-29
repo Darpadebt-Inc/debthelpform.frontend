@@ -1,4 +1,12 @@
+# Content-Security-Policy keeps 'unsafe-inline' so existing inline scripts/styles keep
+# working, and allowlists only the third parties this site actually loads: Bing UET
+# (bat.bing.com), Google Fonts, and the GoHighLevel/LeadConnector lead-form widget
+# (link.msgsndr.com script + api.leadconnectorhq.com iframe). bat.js and form_embed.js
+# are mutable vendor scripts, so SRI is intentionally not pinned (it would break on
+# their next release). To soak in production first, rename the header to
+# Content-Security-Policy-Report-Only; switch back to enforce once clean.
 /*
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://bat.bing.com https://link.msgsndr.com; connect-src 'self' https://bat.bing.com https://debthelpform.com https://api.leadconnectorhq.com https://link.msgsndr.com https://formsubmit.co; frame-src 'self' https://api.leadconnectorhq.com https://link.msgsndr.com; form-action 'self' https://formsubmit.co; upgrade-insecure-requests
   X-Content-Type-Options: nosniff
   X-Frame-Options: DENY
   Referrer-Policy: no-referrer
