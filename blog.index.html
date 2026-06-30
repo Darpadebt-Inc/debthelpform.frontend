@@ -327,12 +327,19 @@
           const displayDate=p.date_published||p.published_at;
           const date=displayDate?new Date(displayDate).toLocaleDateString(undefined,{month:'short',day:'numeric',year:'numeric'}):'';
           const img=p.image||p.thumbnail||'/og-cover.jpg';
+          // Serve webp/avif for local /images/*.png thumbnails (variants are
+          // generated alongside each png); png <img> stays as identical fallback.
+          // Guard ensures a <source> is only emitted when the variant exists.
+          const isLocalPng=/^\/images\/.*\.png$/i.test(img);
+          const pic=isLocalPng
+            ? `<picture><source type="image/avif" srcset="${img.replace(/\.png$/i,'.avif')}"><source type="image/webp" srcset="${img.replace(/\.png$/i,'.webp')}"><img alt="" src="${img}" loading="lazy" decoding="async"></picture>`
+            : `<img alt="" src="${img}" loading="lazy" decoding="async">`;
           const title=p.title||'Untitled';
           const ex=p.excerpt||'';
           const tags=Array.isArray(p.tags)?p.tags.slice(0,3):[];
           const tagMarkup=tags.length?` · ${tags.join(' · ')}`:'';
           return `<article class="card">
-            <a href="${href}"${p.content_url?` data-content-url="${p.content_url}"`:''}><img alt="" src="${img}" loading="lazy" decoding="async"></a>
+            <a href="${href}"${p.content_url?` data-content-url="${p.content_url}"`:''}>${pic}</a>
             <div class="card-body">
               <h2><a href="${href}">${title}</a></h2>
               <div class="meta">${date}${tagMarkup}</div>
