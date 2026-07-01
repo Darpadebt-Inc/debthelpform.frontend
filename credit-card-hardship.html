@@ -102,23 +102,24 @@
       z-index:1000;
       display:flex;
       align-items:center;
-      gap:12px;
-      background:rgba(255,255,255,.97);
-      backdrop-filter:saturate(140%) blur(6px);
-      border:1px solid #e2e8f0;
-      border-radius:999px;
+      justify-content:space-between;
+      gap:16px;
+      flex-wrap:nowrap;
+      background:linear-gradient(135deg,#0b2b4a,#0c5a8f 55%,#0369a1);
+      border:1px solid #0b2b4a;
+      border-radius:18px;
       box-shadow:var(--shadow);
-      padding:8px 10px;
+      padding:10px 16px;
     }
-    .site-nav .brand{display:flex;align-items:center;gap:10px;margin-left:4px}
-    .site-nav .brand img{height:34px;width:auto;display:block}
+    .site-nav .brand{display:flex;align-items:center;gap:12px;flex-shrink:0}
+    .site-nav .brand img{display:block;height:92px;width:auto;max-width:min(70vw,320px);object-fit:contain;padding:8px 18px;border-radius:14px;background:#0b2b4a;border:1px solid rgba(56,189,248,.35);box-shadow:0 10px 26px rgba(2,6,23,.25)}
     .site-nav .links{display:flex;align-items:center;gap:8px;margin-left:auto;flex-wrap:wrap;justify-content:flex-end}
-    .site-nav .links a{display:inline-flex;align-items:center;justify-content:center;padding:8px 12px;border-radius:999px;color:#0f172a;text-decoration:none;font-weight:700;font-size:13px;border:1px solid transparent}
-    .site-nav .links a:hover{background:#f1f5f9;border-color:#e2e8f0}
+    .site-nav .links a{display:inline-flex;align-items:center;justify-content:center;padding:8px 12px;border-radius:12px;background:#fff;color:#0f172a;text-decoration:none;font-weight:600;font-size:13px;border:1px solid #0f172a}
+    .site-nav .links a:hover{background:#e2e8f0}
     .site-nav .links a[aria-current="page"]{background:#e0f2fe;color:#075985;border-color:#bae6fd}
-    .site-nav .links a.call{background:#16a34a;color:#fff;border-color:#16a34a}
-    .site-nav .links a.call:hover{filter:brightness(.95)}
-    .menu-toggle{display:none;border:1px solid #e2e8f0;background:#fff;color:#0f172a;border-radius:10px;padding:8px 12px;font-weight:700;cursor:pointer}
+    .site-nav .links a.call{background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff;border-color:transparent;font-weight:700;box-shadow:0 8px 18px var(--ring)}
+    .site-nav .links a.call:hover{opacity:.95}
+    .menu-toggle{display:none;border:1px solid #0f172a;background:#fff;color:#0f172a;border-radius:10px;padding:8px 12px;font-weight:700;cursor:pointer}
 
     header.hero{margin-top:22px;background:linear-gradient(135deg,#0ea5e9,#22c55e);border-radius:var(--radius);box-shadow:var(--shadow);padding:30px;color:#fff}
     .h1{font-size:clamp(28px,5vw,46px);line-height:1.08;margin:0 0 10px;font-weight:800}
@@ -192,7 +193,7 @@
   <div class="shell">
     <nav class="site-nav" role="navigation" aria-label="Primary">
       <a class="brand" href="/" aria-label="Gateway Debt Help">
-        <img src="/gatewaylego.svg" alt="Gateway Debt Help logo" loading="lazy" />
+        <img src="/images/gateway-logo-header.svg" alt="Gateway Debt Help logo" loading="lazy" />
       </a>
       <button class="menu-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks">Menu</button>
       <div class="links" id="navLinks">
