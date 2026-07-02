@@ -29,3 +29,13 @@ jobs:
           node-version: '22'
       - name: Verify blog feed
         run: node scripts/verify-blog-feed.mjs
+      # Ported from DRG for gate parity. Non-blocking until the G8 content-drift
+      # remediation wave lands (54 findings: missing /blog/*.html _headers rule,
+      # per-slug-only _redirects, hero/url mismatches) — see
+      # debthelpform.backend docs/blog-live-fire-gap-analysis-2026-07-02.md.
+      - name: Check blog structure (033 commit contract, report-only)
+        continue-on-error: true
+        run: node scripts/check-blog-structure.mjs
+      - name: Check blog readiness (033 commit prerequisites, report-only)
+        continue-on-error: true
+        run: node scripts/check-blog-ready.mjs
