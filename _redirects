@@ -12,14 +12,14 @@
 /blog/ /blog.index.html 200
 
 # FAQ routes
-/faq/debt-validation /debt-validation-basics.html 200
-/faq/debt-validation/ /debt-validation-basics.html 200
-/faq/creditors-vs-collectors /learn/creditors-vs-collectors/ 301
-/faq/creditors-vs-collectors/ /learn/creditors-vs-collectors/ 301
+/faq/debt-validation https://debtreliefguard.com/learn/lawsuits-collections/ 301
+/faq/debt-validation/ https://debtreliefguard.com/learn/lawsuits-collections/ 301
+/faq/creditors-vs-collectors https://debtreliefguard.com/learn/creditors-vs-collectors 301
+/faq/creditors-vs-collectors/ https://debtreliefguard.com/learn/creditors-vs-collectors 301
 
 # Learn routes
-/learn/creditors-vs-collectors /learn/creditors-vs-collectors/index.html 200
-/learn/creditors-vs-collectors/ /learn/creditors-vs-collectors/index.html 200
+/learn/creditors-vs-collectors https://debtreliefguard.com/learn/creditors-vs-collectors 301
+/learn/creditors-vs-collectors/ https://debtreliefguard.com/learn/creditors-vs-collectors 301
 /learn/state-laws /learn/state-laws/index.html 200
 /learn/state-laws/ /learn/state-laws/index.html 200
 /state-specific-rules-overview /learn/state-laws/ 301
@@ -153,3 +153,9 @@
 /blog/2026-06-30-red-flags-in-debt-relief-contracts-to-watch-for.html https://debtreliefguard.com/blog/red-flags-in-debt-relief-contracts-to-watch-for 301
 /blog/2026-06-30-what-upfront-fee-bans-mean-for-consumers https://debtreliefguard.com/blog/what-upfront-fee-bans-mean-for-consumers 301
 /blog/2026-06-30-what-upfront-fee-bans-mean-for-consumers.html https://debtreliefguard.com/blog/what-upfront-fee-bans-mean-for-consumers 301
+
+# Removed non-owned topic pages -> 301 to DRG (owning site)
+/creditors-vs-collectors.html https://debtreliefguard.com/learn/creditors-vs-collectors 301
+/creditors-vs-collectors https://debtreliefguard.com/learn/creditors-vs-collectors 301
+/debt-validation-basics.html https://debtreliefguard.com/learn/lawsuits-collections/ 301
+/debt-validation-basics https://debtreliefguard.com/learn/lawsuits-collections/ 301
