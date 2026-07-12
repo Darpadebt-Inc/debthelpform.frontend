@@ -29,6 +29,12 @@ jobs:
           node-version: '22'
       - name: Verify blog feed
         run: node scripts/verify-blog-feed.mjs
+      # C5FT: report-only client-surface sanitizer shadow (duplicate pretty URLs,
+      # date-suffix slug mutants, malformed index url fields). Observational only:
+      # the script always exits 0 and the step is continue-on-error as well.
+      - name: Client-surface sanitizer shadow (report-only)
+        continue-on-error: true
+        run: node scripts/check-client-surface-sanitizer-shadow.mjs
       # Ported from DRG for gate parity. Non-blocking until the G8 content-drift
       # remediation wave lands (54 findings: missing /blog/*.html _headers rule,
       # per-slug-only _redirects, hero/url mismatches) — see
